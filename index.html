@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>Empty</title>
+
+    <style>
+        i {
+            color: goldenrod;
+        }
+        .red{
+            border: 2px solid #b8daff;
+        }
+        .alert-primary{
+            border-color: inherit !important;
+            border-radius: 0px !important;
+            border: none !important;
+        }
+        .table{
+            width: 100% !important;
+            padding: 0;
+            margin: 0;
+        }
+        .table thead th{
+          font-size: 14px;
+            
+        }
+        .col-md-4{
+            padding: 0px !important;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- <div class="figuras">
+        <div class="figura figura--chip" id="figura--chip"></div>
+    </div> -->
+
+    <nav class=""></nav>
+
+    <main role="main" class="flex-shrink-0">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 red">
+                    <div class="alert alert-primary text-center font-weight-bold" role="alert">MODELO 1</div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">#</th> -->
+                                <th scope="col">Atacante</th>
+                                <th scope="col">Defensor</th>
+                                <th scope="col">Objetivo Esperado</th>
+                                <th scope="col">Objetivo Deseado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ataque"></tbody>
+                    </table>
+                    <div class="alert alert-primary text-center font-weight-bold w-100" role="alert">
+                        RESUMEN MODELO 1
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Total <br>Esperado</th>
+                                <th scope="col">Total <br>Deseado</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="resumen">
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-md-4 red">
+                    <div class="alert alert-primary text-center font-weight-bold" role="alert">MODELO 2</div>
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">#</th> -->
+                                <th scope="col">Atacante</th>
+                                <th scope="col">Defensor</th>
+                                <th scope="col">Objetivo Esperado</th>
+                                <th scope="col">Objetivo Deseado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ataque2"></tbody>
+                    </table>
+                    <div class="alert alert-primary text-center font-weight-bold w-100" role="alert">
+                        RESUMEN MODELO 2
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Total <br>Esperado</th>
+                                <th scope="col">Total <br>Deseado</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="resumen2">
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 red">
+                    <div class="alert alert-primary text-center font-weight-bold" role="alert">MODELO 3</div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">#</th> -->
+                                <th scope="col">Atacante</th>
+                                <th scope="col">Defensor</th>
+                                <th scope="col">Objetivo Esperado</th>
+                                <th scope="col">Objetivo Deseado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ataque3"></tbody>
+                    </table>
+                    <div class="alert alert-primary text-center font-weight-bold w-100" role="alert">
+                        RESUMEN MODELO 3
+                    </div>
+                    <table class="table table-striped mb-5">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Total <br>Esperado</th>
+                                <th scope="col">Total <br>Deseado</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="resumen3">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <footer class="mt-auto"></footer>
+
+
+    <script src="js/jq.min.js"></script>
+    <script>
+        function modelo1() {
+            var c = 0;
+            var distance = 10;
+            for (let i = 1; i <= 30; i++) {
+                if (i + 10 > 30) {
+
+                    console.log(i + " vs " + (i - 20) + " Obj: 0");
+
+                    $("#ataque").append('<tr><td>' + i + '</td><td>' + (i - 20) + '</td><td class="alert-success"> 0 <i class="fa fa-star" aria-hidden="true"></i> </td><td>1 <i class="fa fa-star" aria-hidden="true"></i> </td></tr>')
+                } else {
+                    console.log(i + " vs " + (i + 10) + " Obj: 3");
+                    c = c + 3;
+                    $("#ataque").append('<tr><td>' + i + '</td><td>' + (i + 10) + '</td><td class="alert-success">3 <i class="fa fa-star" aria-hidden="true"></i></td><td>3 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                }
+                //console.log(i + " vs "+ (i + 5) + " Obj: 3")
+            }
+            $("#resumen").append(' <tr><td class="alert-success">' + c + ' <i class="fa fa-star" aria-hidden="true"></i></td><td>' + (c + 10) + ' <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+
+        }
+
+        function modelo2() {
+            var c = 0;
+       
+            for (let i = 1; i <= 30; i++) {
+
+                if(i <= 7){
+                    $("#ataque2").append('<tr><td>' + i + '</td><td>' + (i + 7) + '</td><td class="alert-success">3 <i class="fa fa-star" aria-hidden="true"></i></td><td>3 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                    c = c + 3
+                }
+
+                if(i >= 8 && i <= 14){
+                    $("#ataque2").append('<tr><td>' + i + '</td><td>' + (i - 7) + '</td><td class="alert-success">1 <i class="fa fa-star" aria-hidden="true"></i></td><td>2 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                    c = c + 1
+                }
+
+                if(i >= 15 && i <= 20){
+                    $("#ataque2").append('<tr><td>' + i + '</td><td>' + (i + 5) + '</td><td class="alert-success">2 <i class="fa fa-star" aria-hidden="true"></i></td><td>3 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                    c = c + 2
+                }
+
+                if(i >= 21 && i <= 25){
+                    $("#ataque2").append('<tr><td>' + i + '</td><td>' + (i + 5) + '</td><td class="alert-success">3 <i class="fa fa-star" aria-hidden="true"></i></td><td>3 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                    c = c + 3
+                }
+
+                if(i > 25){
+                    $("#ataque2").append('<tr><td>' + i + '</td><td>' + (i - 10) + '</td><td class="alert-success">1 <i class="fa fa-star" aria-hidden="true"></i></td><td>2 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                    c = c + 1
+                }
+                
+                
+            }
+            $("#resumen2").append(' <tr><td class="alert-success">' + c + ' <i class="fa fa-star" aria-hidden="true"></i></td><td>' + (c + 18) + ' <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+
+        }
+
+        function modelo3() {
+            var c = 0;
+            var distance = 10;
+            for (let i = 1; i <= 30; i++) {
+                if (i + 5 > 30) {
+
+                    console.log(i + " vs " + (i - 20) + " Obj: 0");
+
+                    $("#ataque3").append('<tr><td>' + i + '</td><td>' + (i - 25) + '</td><td class="alert-success"> 0 <i class="fa fa-star" aria-hidden="true"></i> </td><td>1 <i class="fa fa-star" aria-hidden="true"></i> </td></tr>')
+                } else {
+                    console.log(i + " vs " + (i + 5) + " Obj: 3");
+                    c = c + 3;
+                    $("#ataque3").append('<tr><td>' + i + '</td><td>' + (i + 5) + '</td><td class="alert-success">3 <i class="fa fa-star" aria-hidden="true"></i></td><td>3 <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+                }
+                //console.log(i + " vs "+ (i + 5) + " Obj: 3")
+            }
+            $("#resumen3").append(' <tr><td class="alert-success">' + c + ' <i class="fa fa-star" aria-hidden="true"></i></td><td>' + (c + 5) + ' <i class="fa fa-star" aria-hidden="true"></i></td></tr>')
+
+        }
+
+
+        modelo1();
+        modelo2();
+        modelo3();
+
+
+
+
+    </script>
+</body>
+
+</html>
